@@ -115,6 +115,10 @@ function gnomeSort()
 		
 		updateDisplayCanvas();
 	}
+	else
+	{
+		clearInterval(sortInterval);
+	}
 }
 
 
