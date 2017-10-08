@@ -165,6 +165,37 @@ function selectionSort()
 	}
 }
 
+var combIndex = 0;
+var combWidth = 45;
+
+function combSort()
+{
+	if(!sorted)
+	{
+		sorted = isSorted();
+	
+		if((combIndex + combWidth) < (image.length))
+		{
+			if(image[combIndex].index > image[combIndex + combWidth].index)
+			{
+				swapImageData(combIndex, combIndex + combWidth);
+			}
+			
+			combIndex++;
+		}
+		else
+		{
+			if(combWidth > 0)
+			{
+				combWidth--;
+			}
+			combIndex = 0;
+		}
+		
+		updateDisplayCanvas();
+	}
+}
+
 function shuffleCanvas()
 {
 	var pixelCount = sourceCanvas.width * sourceCanvas.height;
