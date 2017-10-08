@@ -16,6 +16,7 @@ function loadImage()
 	
 	imageData.onload = function () {
 		sourceContext.drawImage(imageData, 0, 0);
+		initializeImageArray();
 	}
 	
 	imageData.src = "chicken32.png";
@@ -26,7 +27,6 @@ function startSort()
 {
 	sorted = false;
 	
-	initializeImageArray();
 	shuffleCanvas();
 	//setInterval(gnomeSort, 0);
 	setInterval(combSort, 0);
