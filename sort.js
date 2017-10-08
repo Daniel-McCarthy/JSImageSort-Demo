@@ -13,6 +13,14 @@ function loadImage()
 	}
 	
 	imageData.src = "chicken.png";
+}
+
+
+function startSort()
+{
+	initializeImageArray();
+	shuffleCanvas();
+}
 
 function initializeImageArray()
 {
