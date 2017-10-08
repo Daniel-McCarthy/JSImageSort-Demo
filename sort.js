@@ -437,5 +437,20 @@ function get2DXValue(index, width)
 
 function get2DYValue(index, width)
 {
+
 	return parseInt(index / width);
+}
+
+function pauseButton()
+{
+	if(paused)
+	{
+		paused = false;
+		document.getElementById("pauseButton").value = "Pause";
+	}
+	else
+	{
+		paused = true;
+		document.getElementById("pauseButton").value = "Resume";
+	}
 }
