@@ -90,8 +90,53 @@ function gnomeSort()
 	updateDisplayCanvas();
 }
 
+
+var closestValue = 0;
+var closestIndex = 0;
+var selectionIndex = 0;
+var selectionSecondIndex = 0;
+var selectionSwapNeeded = false;
+
+function selectionSort()
 {
+	var c = 0;
 	
+	if(selectionIndex == 0 && selectionSecondIndex == 0)
+	{
+
+		closestValue = image[selectionIndex].index;
+		closestIndex = selectionIndex;
+	}
+	
+	if(selectionSecondIndex < image.length)
+	{
+		if(image[selectionSecondIndex].index < closestValue)
+		{
+			closestValue = image[selectionSecondIndex].index;
+			closestIndex = selectionSecondIndex;
+			selectionSwapNeeded = true;
+		}
+		selectionSecondIndex++;
+	}
+	else
+	{
+		if(selectionSwapNeeded)
+		{
+			swapImageData(selectionIndex, closestIndex);
+		}
+		
+		selectionSwapNeeded = false;
+	
+		selectionIndex++;
+		selectionSecondIndex = selectionIndex + 1;
+		
+		closestValue = image[selectionIndex].index;
+		closestIndex = selectionIndex;
+
+	}
+
+	
+}
 
 function shuffleCanvas()
 {
