@@ -8,14 +8,12 @@ sourceContext.imageSmoothingEnabled = false;
 
 function loadImage()
 {
+	document.getElementById("imageCanvas").getContext("2d").imageSmoothingEnabled = false;
 
-	var imageCanvas = document.getElementById("imageCanvas");
-	var imageCanvasContext = imageCanvas.getContext("2d");
-	
 	var imageData = new Image();
 	
 	imageData.onload = function () {
-		imageCanvasContext.drawImage(imageData, 0, 0);
+		sourceContext.drawImage(imageData, 0, 0);
 	}
 	
 	imageData.src = "chicken32.png";
