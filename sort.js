@@ -12,7 +12,7 @@ function loadImage()
 		imageCanvasContext.drawImage(imageData, 0, 0);
 	}
 	
-	imageData.src = "chicken.png";
+	imageData.src = "chicken32.png";
 }
 
 
