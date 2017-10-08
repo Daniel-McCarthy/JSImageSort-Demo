@@ -1,6 +1,7 @@
 var image = [];
 var sorted = false;
 var sortInterval;
+var paused = false;
 
 var sourceCanvas = document.createElement("canvas");
 var sourceContext = sourceCanvas.getContext("2d");
@@ -164,7 +165,7 @@ function isSorted()
 var gnomeIndex = 0;
 function gnomeSort()
 {
-	if(!sorted)
+	if(!paused)
 	{
 		sorted = isSorted();
 	
@@ -182,7 +183,8 @@ function gnomeSort()
 		
 		updateDisplayCanvas();
 	}
-	else
+		
+	if(sorted)
 	{
 		clearInterval(sortInterval);
 	}
@@ -197,7 +199,7 @@ var selectionSwapNeeded = false;
 
 function selectionSort()
 {
-	if(!sorted)
+	if(!paused)
 	{
 		sorted = isSorted();
 	
@@ -239,7 +241,8 @@ function selectionSort()
 		
 		updateDisplayCanvas();
 	}
-	else
+		
+	if(sorted)
 	{
 		clearInterval(sortInterval);
 	}
@@ -250,7 +253,7 @@ var combWidth = 45;
 
 function combSort()
 {
-	if(!sorted)
+	if(!paused)
 	{
 		sorted = isSorted();
 	
@@ -274,7 +277,8 @@ function combSort()
 		
 		updateDisplayCanvas();
 	}
-	else
+		
+	if(sorted)
 	{
 		clearInterval(sortInterval);
 	}
@@ -289,7 +293,7 @@ var shellC = 0;
 var shellCIndex = 0;
 function shellSort()
 {
-	if(!sorted)
+	if(!paused)
 	{
 		sorted = isSorted();
 	
@@ -330,7 +334,8 @@ function shellSort()
 			shellCIndex = shellSecondaryIndex;
 		}
 	}
-	else
+		
+	if(sorted)
 	{
 		clearInterval(sortInterval);
 	}
@@ -342,7 +347,7 @@ var oddEvenC = 0;
 
 function oddEvenSort()
 {
-	if(!sorted)
+	if(!paused)
 	{
 		sorted = isSorted();
 	
@@ -363,7 +368,8 @@ function oddEvenSort()
 	
 		updateDisplayCanvas();
 	}
-	else
+		
+	if(sorted)
 	{
 		clearInterval(sortInterval);
 	}
@@ -377,7 +383,7 @@ var insertionFirstRun = true;
 
 function insertionSort()
 {
-if(!sorted)
+	if(!paused)
 	{
 		sorted = isSorted();
 	
@@ -413,7 +419,8 @@ if(!sorted)
 			
 		updateDisplayCanvas();
 	}
-	else
+		
+	if(sorted)
 	{
 		clearInterval(sortInterval);
 	}
