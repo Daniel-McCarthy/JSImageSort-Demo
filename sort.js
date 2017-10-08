@@ -68,17 +68,18 @@ function shuffleCanvas()
 	var pixelCount = canvas.width * canvas.height;
 
 	for(var i = 0; i < pixelCount; i++)
+	{	
 		var randomIndex =  Math.floor(Math.random() * ((pixelCount-1) - i) + i);
 		swapImageData(i, randomIndex);
 	}
 }
 
-	function get2DXValue(index, width)
-	{
-		return index - (parseInt(index / width) * width);
-	}
-	
-	function get2DYValue(index, width)
-	{
-		return parseInt(index / width);
-	}
+function get2DXValue(index, width)
+{
+	return index - (parseInt(index / width) * width);
+}
+
+function get2DYValue(index, width)
+{
+	return parseInt(index / width);
+}
