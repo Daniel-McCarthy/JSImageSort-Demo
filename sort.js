@@ -20,6 +20,7 @@ function startSort()
 {
 	initializeImageArray();
 	shuffleCanvas();
+	setInterval(gnomeSort, 0);
 }
 
 function initializeImageArray()
