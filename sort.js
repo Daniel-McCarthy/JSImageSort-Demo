@@ -1,5 +1,6 @@
 var image = [];
 var sorted = false;
+var sortInterval;
 
 var sourceCanvas = document.createElement("canvas");
 var sourceContext = sourceCanvas.getContext("2d");
@@ -25,11 +26,12 @@ function loadImage()
 
 function startSort()
 {
+	clearInterval(sortInterval);
 	sorted = false;
 	
 	shuffleCanvas();
 	//setInterval(gnomeSort, 0);
-	setInterval(combSort, 0);
+	sortInterval = setInterval(combSort, 0);
 }
 
 function initializeImageArray()
