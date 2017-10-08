@@ -131,43 +131,48 @@ var selectionSwapNeeded = false;
 
 function selectionSort()
 {
-	var c = 0;
-	
-	if(selectionIndex == 0 && selectionSecondIndex == 0)
+	if(!sorted)
 	{
+		sorted = isSorted();
+	
+		var c = 0;
+		
+		if(selectionIndex == 0 && selectionSecondIndex == 0)
+		{
 
-		closestValue = image[selectionIndex].index;
-		closestIndex = selectionIndex;
-	}
-	
-	if(selectionSecondIndex < image.length)
-	{
-		if(image[selectionSecondIndex].index < closestValue)
-		{
-			closestValue = image[selectionSecondIndex].index;
-			closestIndex = selectionSecondIndex;
-			selectionSwapNeeded = true;
-		}
-		selectionSecondIndex++;
-	}
-	else
-	{
-		if(selectionSwapNeeded)
-		{
-			swapImageData(selectionIndex, closestIndex);
+			closestValue = image[selectionIndex].index;
+			closestIndex = selectionIndex;
 		}
 		
-		selectionSwapNeeded = false;
-	
-		selectionIndex++;
-		selectionSecondIndex = selectionIndex + 1;
+		if(selectionSecondIndex < image.length)
+		{
+			if(image[selectionSecondIndex].index < closestValue)
+			{
+				closestValue = image[selectionSecondIndex].index;
+				closestIndex = selectionSecondIndex;
+				selectionSwapNeeded = true;
+			}
+			selectionSecondIndex++;
+		}
+		else
+		{
+			if(selectionSwapNeeded)
+			{
+				swapImageData(selectionIndex, closestIndex);
+			}
+			
+			selectionSwapNeeded = false;
 		
-		closestValue = image[selectionIndex].index;
-		closestIndex = selectionIndex;
+			selectionIndex++;
+			selectionSecondIndex = selectionIndex + 1;
+			
+			closestValue = image[selectionIndex].index;
+			closestIndex = selectionIndex;
 
+		}
+		
+		updateDisplayCanvas();
 	}
-
-	
 }
 
 function shuffleCanvas()
