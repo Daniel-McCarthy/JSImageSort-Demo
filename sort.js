@@ -172,6 +172,10 @@ function selectionSort()
 		
 		updateDisplayCanvas();
 	}
+	else
+	{
+		clearInterval(sortInterval);
+	}
 }
 
 var combIndex = 0;
