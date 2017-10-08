@@ -17,7 +17,16 @@
 				<canvas 	id="imageCanvas" width="256" height="256" style= "position:relative; top: 10px;" onload = "loadImage()"></canvas>
 			</div>
 			<br>
-			<input type="button" value="Shuffle Image then Sort" id="startSortButton" onclick="startSort()" style= "height:35px;position:relative; top: 35px;" />
+			<input type="button" value="Shuffle Image then Sort" id="startSortButton" onclick="startSort()" style= "height:35px; position:relative; top: 35px;" />
+			<br>
+			<select style = "position:relative; top: 55px; width: 155px;" id="algorithmDropDownMenu">
+				<option value="Gnome Sort">Gnome Sort</option>
+				<option value="Insertion Sort">Insertion Sort</option>
+				<option value="Selection Sort">Selection Sort</option>
+				<option value="Comb Sort">Comb Sort</option>
+				<option value="Shell Sort">Shell Sort</option>
+				<option value="Odd Even Sort">Odd Even Sort</option>
+			</select>
 		
 		</div>
 	</body>
