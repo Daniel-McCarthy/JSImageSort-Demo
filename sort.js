@@ -60,5 +60,49 @@ function swapImageData(index1, index2)
 	image[index2] = c;
 }
 
+function shuffleCanvas()
+{
+	var canvas = document.getElementById("imageCanvas");
+	var context = canvas.getContext("2d");
 	
+	var pixelCount = canvas.width * canvas.height;
+	
+	var elementIndices = [];
+	
+	for(var i = 0; i < pixelCount; i++)
+	{
+		elementIndices.push(i);
+	}
+	
+	for(var i = 0; i < elementIndices.length; i++)
+	{
+		var randomIndex1 =  Math.floor(Math.random() * (elementIndices.length-1));
+		
+		var randomIndex2 =  Math.floor(Math.random() * (elementIndices.length-1));
+		
+		if(randomIndex1 == randomIndex2)
+		{
+			if(randomIndex2 < 0)
+			{
+				randomIndex2--;
+			}
+			else if(randomIndex1 < 0)
+			{
+				randomIndex1--;
+			}
+			else if(randomIndex1 < (elementIndices.length - 1))
+			{
+				randomIndex1++;
+			}
+			else if(randomIndex2 < (elementIndices.length - 1))
+			{
+				randomIndex2++;
+			}
+		}
+		
+		swapImageData(randomIndex1, randomIndex2);
+		
+		elementIndices.splice(randomIndex1, 1);
+		elementIndices.splice(randomIndex2, 1);
+	}
 }
