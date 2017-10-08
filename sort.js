@@ -90,9 +90,26 @@ function isSorted()
 var gnomeIndex = 0;
 function gnomeSort()
 {
-	var c;
+	if(!sorted)
+	{
+		sorted = isSorted();
 	
-	if((gnomeIndex == 0) || (image[gnomeIndex].index >= image[gnomeIndex - 1].index))
+		var c;
+		
+		if((gnomeIndex == 0) || (image[gnomeIndex].index >= image[gnomeIndex - 1].index))
+		{
+			gnomeIndex++;
+		}
+		else
+		{
+			swapImageData(gnomeIndex, gnomeIndex - 1);
+			gnomeIndex--;
+		}
+		
+		updateDisplayCanvas();
+	}
+}
+
 	{
 		gnomeIndex++;
 	}
