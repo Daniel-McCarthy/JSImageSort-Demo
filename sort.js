@@ -202,8 +202,6 @@ function selectionSort()
 	if(!paused)
 	{
 		sorted = isSorted();
-	
-		var c = 0;
 		
 		if(selectionIndex == 0 && selectionSecondIndex == 0)
 		{
