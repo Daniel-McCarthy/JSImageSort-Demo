@@ -1,3 +1,5 @@
+var image = [];
+
 function loadImage()
 {
 
