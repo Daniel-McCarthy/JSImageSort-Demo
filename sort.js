@@ -61,6 +61,23 @@ function swapImageData(index1, index2)
 	image[index2] = c;
 }
 
+
+var gnomeIndex = 0;
+function gnomeSort()
+{
+	var c;
+	
+	if((gnomeIndex == 0) || (image[gnomeIndex].index >= image[gnomeIndex - 1].index))
+	{
+		gnomeIndex++;
+	}
+	else
+	{
+		swapImageData(gnomeIndex, gnomeIndex - 1);
+		gnomeIndex--;
+	}
+}
+
 function shuffleCanvas()
 {
 	var canvas = document.getElementById("imageCanvas");
