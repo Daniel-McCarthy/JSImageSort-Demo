@@ -59,6 +59,12 @@ function startSort()
 	oddEvenIndex = 0;
 	oddEvenSecondaryIndex = 2;
 	oddEvenC = 0;
+	
+	//Insertion Sort
+	insertionIndex = 1;
+	insertionSecondIndex = 0;
+	insertionSwapNeeded = false;
+	insertionFirstRun = true;
 }
 
 function initializeImageArray()
@@ -321,6 +327,56 @@ function oddEvenSort()
 			oddEvenSecondaryIndex = ((oddEvenIndex % 2) == 0) ? 2 : 1;
 		}
 	
+		updateDisplayCanvas();
+	}
+	else
+	{
+		clearInterval(sortInterval);
+	}
+}
+
+
+var insertionIndex = 1;
+var insertionSecondIndex = 0;
+var insertionSwapNeeded = false;
+var insertionFirstRun = true;
+
+function insertionSort()
+{
+if(!sorted)
+	{
+		sorted = isSorted();
+	
+
+		if(insertionFirstRun)
+		{
+			insertionSwapNeeded = image[insertionIndex].index < image[insertionIndex - 1].index;
+			insertionSecondIndex = insertionIndex;
+			insertionFirstRun = false;
+		}
+		
+		if(insertionSwapNeeded)
+		{
+			swapImageData(insertionSecondIndex, insertionSecondIndex -1);
+			
+			insertionSecondIndex--;
+			
+			if(insertionSecondIndex > 0)
+			{
+				insertionSwapNeeded = image[insertionSecondIndex].index < image[insertionSecondIndex - 1].index;
+			}
+			else
+			{
+				insertionSwapNeeded = false;
+			}
+		}
+		else
+		{
+			insertionIndex++;
+			insertionSwapNeeded = image[insertionIndex].index < image[insertionIndex - 1].index;
+			insertionSecondIndex = insertionIndex;
+		}
+			
 		updateDisplayCanvas();
 	}
 	else
