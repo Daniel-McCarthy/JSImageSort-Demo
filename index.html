@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+
+		<title>
+			JSImageSort Demo
+		</title>
+	</head>
+
+	<body style= "background-color:pink;"  onload = "loadImage()"> <!--onload="startTimer()"-->
+		<script type = "text/javascript" src = "sort.js"></script>
+		
+		<div id = "foreground" style="text-align: center; margin: 0 auto; width:600px; height:600px; background-color: #FF90AD; border-radius: 25px;border: 3px solid white;">
+			<div style="position:relative; top: 10px; text-align: center; margin: 0 auto; width: 320px; height: 420px; background-color: white; border-radius: 25px;border: 3px solid white;">
+				<canvas 	id="imageCanvas" width="300" height="400" style= "position:relative; top: 10px;" onload = "loadImage()"></canvas>
+			</div>
+			<br>
+			<input type="button" value="Shuffle Image then Sort" id="startSortButton" onclick="startSort()" style= "height:35px;position:relative; top: 35px;" />
+		
+		</div>
+	</body>
+</html> 
