@@ -227,6 +227,62 @@ function combSort()
 	}
 }
 
+var shellInitialRun = true;
+var shellIndex = 0;
+var shellSecondaryIndex = 0;
+var shellGap = 0;
+
+var shellC = 0;
+var shellCIndex = 0;
+function shellSort()
+{
+	if(!sorted)
+	{
+		sorted = isSorted();
+	
+		if(shellInitialRun)
+		{
+			shellGap = image.length / 2;
+			shellIndex = 0;
+			shellSecondaryIndex = shellGap + shellIndex;
+			shellCIndex = shellSecondaryIndex;
+			shellInitialRun = false;
+		}
+
+		if((shellGap + shellIndex) < image.length)
+		{
+			
+			if((shellSecondaryIndex >= shellGap) && (image[shellCIndex].index < image[shellSecondaryIndex - shellGap].index))
+			{
+				swapImageData(shellSecondaryIndex, shellSecondaryIndex - shellGap);
+				shellCIndex = shellSecondaryIndex - shellGap;
+				shellC = image[shellCIndex].index;
+				shellSecondaryIndex -= shellGap;
+			}
+			else
+			{
+				swapImageData(shellSecondaryIndex, shellCIndex);
+				shellIndex++;
+				shellSecondaryIndex = shellGap + shellIndex;
+				shellCIndex = shellSecondaryIndex;
+			}
+
+			updateDisplayCanvas();
+		}
+		else
+		{
+			shellGap = Math.floor(shellGap/2);
+			shellIndex = 0;
+			shellSecondaryIndex = shellGap + shellIndex;
+			shellCIndex = shellSecondaryIndex;
+		}
+	}
+	else
+	{
+		clearInterval(sortInterval);
+	}
+}
+
 function shuffleCanvas()
 {
 	var pixelCount = sourceCanvas.width * sourceCanvas.height;
