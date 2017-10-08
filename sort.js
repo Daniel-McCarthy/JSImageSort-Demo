@@ -24,6 +24,8 @@ function loadImage()
 
 function startSort()
 {
+	sorted = false;
+	
 	initializeImageArray();
 	shuffleCanvas();
 	//setInterval(gnomeSort, 0);
