@@ -46,6 +46,19 @@ function startSort()
 	//Init Comb Sort
 	combIndex = 0;
 	combWidth = 45;
+	
+	//Init Shell Sort
+	shellInitialRun = true;
+	shellIndex = 0;
+	shellSecondaryIndex = 0;
+	shellGap = 0;
+	shellC = 0;
+	shellCIndex = 0;
+	
+	//Odd Even Sort
+	oddEvenIndex = 0;
+	oddEvenSecondaryIndex = 2;
+	oddEvenC = 0;
 }
 
 function initializeImageArray()
