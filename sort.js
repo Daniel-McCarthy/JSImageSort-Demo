@@ -30,8 +30,42 @@ function startSort()
 	sorted = false;
 	
 	shuffleCanvas();
-	//setInterval(gnomeSort, 0);
-	sortInterval = setInterval(combSort, 0);
+	
+	var algorithm = document.getElementById("algorithmDropDownMenu").value;
+	
+	switch(algorithm)
+	{
+		case "Gnome Sort":
+		{
+			sortInterval = setInterval(gnomeSort, 0);
+			break;
+		}
+		case "Insertion Sort":
+		{
+			sortInterval= setInterval(insertionSort, 0);
+			break;
+		}
+		case "Selection Sort":
+		{
+			sortInterval = setInterval(selectionSort, 0);
+			break;
+		}
+		case "Comb Sort":
+		{
+			sortInterval = setInterval(combSort, 0);
+			break;
+		}
+		case "Shell Sort":
+		{
+			sortInterval = setInterval(shellSort, 0);
+			break;
+		}
+		case "Odd Even Sort":
+		{
+			sortInterval = setInterval(oddEvenSort, 0);
+			break;
+		}
+	}
 	
 	//Init Gnome Sort
 	gnomeIndex = 0;
