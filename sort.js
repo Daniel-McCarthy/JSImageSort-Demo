@@ -112,18 +112,6 @@ function gnomeSort()
 	}
 }
 
-	{
-		gnomeIndex++;
-	}
-	else
-	{
-		swapImageData(gnomeIndex, gnomeIndex - 1);
-		gnomeIndex--;
-	}
-	
-	updateDisplayCanvas();
-}
-
 
 var closestValue = 0;
 var closestIndex = 0;
