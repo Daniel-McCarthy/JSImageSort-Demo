@@ -1,4 +1,6 @@
 var image = [];
+var sorted = false;
+
 var sourceCanvas = document.createElement("canvas");
 var sourceContext = sourceCanvas.getContext("2d");
 sourceCanvas.width = 32;
