@@ -72,6 +72,21 @@ function updateDisplayCanvas()
 	displayContext.drawImage(img, 0, 0, 256, 256);
 }
 
+function isSorted()
+{
+	var sorted = true;
+	for(var i = 1; i < image.length; i++)
+	{
+			if(image[i - 1].index >= image[i].index)
+			{
+				sorted = false;
+			}
+	}
+	
+	return sorted;
+}
+
+
 var gnomeIndex = 0;
 function gnomeSort()
 {
