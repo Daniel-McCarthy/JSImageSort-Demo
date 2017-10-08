@@ -283,6 +283,39 @@ function shellSort()
 	}
 }
 
+var oddEvenIndex = 0;
+var oddEvenSecondaryIndex = 2;
+var oddEvenC = 0;
+
+function oddEvenSort()
+{
+	if(!sorted)
+	{
+		sorted = isSorted();
+	
+		if(oddEvenSecondaryIndex < image.length)
+		{
+			if(image[oddEvenSecondaryIndex].index < image[oddEvenSecondaryIndex - 1].index)
+			{
+				swapImageData(oddEvenSecondaryIndex, oddEvenSecondaryIndex - 1);
+			}
+			
+			oddEvenSecondaryIndex += 2;
+		}
+		else
+		{
+			oddEvenIndex++;
+			oddEvenSecondaryIndex = ((oddEvenIndex % 2) == 0) ? 2 : 1;
+		}
+	
+		updateDisplayCanvas();
+	}
+	else
+	{
+		clearInterval(sortInterval);
+	}
+}
+
 function shuffleCanvas()
 {
 	var pixelCount = sourceCanvas.width * sourceCanvas.height;
