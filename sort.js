@@ -86,6 +86,8 @@ function gnomeSort()
 		swapImageData(gnomeIndex, gnomeIndex - 1);
 		gnomeIndex--;
 	}
+	
+	updateDisplayCanvas();
 }
 
 {
