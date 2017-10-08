@@ -26,7 +26,8 @@ function startSort()
 {
 	initializeImageArray();
 	shuffleCanvas();
-	setInterval(gnomeSort, 0);
+	//setInterval(gnomeSort, 0);
+	setInterval(combSort, 0);
 }
 
 function initializeImageArray()
