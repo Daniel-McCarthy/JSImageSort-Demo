@@ -32,6 +32,20 @@ function startSort()
 	shuffleCanvas();
 	//setInterval(gnomeSort, 0);
 	sortInterval = setInterval(combSort, 0);
+	
+	//Init Gnome Sort
+	gnomeIndex = 0;
+	
+	//Init Selection Sort
+	closestValue = 0;
+	closestIndex = 0;
+	selectionIndex = 0;
+	selectionSecondIndex = 0;
+	selectionSwapNeeded = false;
+	
+	//Init Comb Sort
+	combIndex = 0;
+	combWidth = 45;
 }
 
 function initializeImageArray()
