@@ -207,6 +207,10 @@ function combSort()
 		
 		updateDisplayCanvas();
 	}
+	else
+	{
+		clearInterval(sortInterval);
+	}
 }
 
 function shuffleCanvas()
