@@ -61,6 +61,16 @@ function swapImageData(index1, index2)
 	image[index2] = c;
 }
 
+function updateDisplayCanvas()
+{
+	var displayContext = document.getElementById("imageCanvas").getContext("2d");
+	
+	var src = sourceCanvas.toDataURL("image/png");
+	var img = document.createElement('img');
+	img.src = src;
+	
+	displayContext.drawImage(img, 0, 0, 256, 256);
+}
 
 var gnomeIndex = 0;
 function gnomeSort()
