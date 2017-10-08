@@ -106,3 +106,13 @@ function shuffleCanvas()
 		elementIndices.splice(randomIndex2, 1);
 	}
 }
+
+	function get2DXValue(index, width)
+	{
+		return index - (parseInt(index / width) * width);
+	}
+	
+	function get2DYValue(index, width)
+	{
+		return parseInt(index / width);
+	}
