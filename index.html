@@ -7,32 +7,35 @@
 		<title>
 			JSImageSort Demo
 		</title>
+		
+		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 
-	<body style= "background-color:pink;">
+	<body>
 		<script type = "text/javascript" src = "sort.js"></script>
 		
-		<div id = "foreground" style="text-align: center; margin: 0 auto; width:600px; height:450px; background-color: #FF90AD; border-radius: 25px;border: 3px solid white;">
-			<div style="position:relative; top: 10px; text-align: center; margin: 0 auto; width: 280px; height: 280px; background-color: white; border-radius: 25px;border: 3px solid white;">
-				<canvas 	id="imageCanvas" width="256" height="256" style= "position:relative; top: 10px;" onload = "loadImage()"></canvas>
+		<div id = "foreground">
+			<div id="canvasDiv">
+				<canvas 	id="imageCanvas" width="256" height="256" onload = "loadImage()"></canvas>
 			</div>
 			<br>
-			<input type="button" value="Shuffle Image then Sort" id="startSortButton" onclick="startSort()" style= "height:35px; position:relative; top: 10px;" />
+			<input type="button" value="Shuffle Image then Sort" id="startSortButton" onclick="startSort()"/>
 			<br>
-			<input type="button" value="Pause" id="pauseButton" onclick="pauseButton()" style= "height:35px; position:relative; top: 20px;  width: 155px;" />
+			<input type="button" value="Pause" id="pauseButton" onclick="pauseButton()"/>
 			<br>
-			<select style = "position:relative; top: 30px; width: 155px;" id="algorithmDropDownMenu">
+			<select id="algorithmDropDownMenu">
 				<option value="Gnome Sort">Gnome Sort</option>
 				<option value="Insertion Sort">Insertion Sort</option>
 				<option value="Selection Sort">Selection Sort</option>
 				<option value="Comb Sort">Comb Sort</option>
 				<option value="Shell Sort">Shell Sort</option>
 				<option value="Odd Even Sort">Odd Even Sort</option>
+				<option value="Cocktail Sort">Cocktail Sort</option>
 			</select>
 		
 		</div>
 		<br>
-		<div style="text-align: center; margin: 0 auto;">
+		<div id="radioButtonDiv">
 			<input type = "radio" name = "imageSelect" onchange = "swapImage()" checked>Photo
 			<input type = "radio" name = "imageSelect" onchange = "swapImage()"> Gradient
 		</div>
