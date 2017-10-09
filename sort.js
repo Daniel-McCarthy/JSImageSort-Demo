@@ -118,6 +118,8 @@ function initializeImageArray()
 
 	var pixelCount = sourceCanvas.width * sourceCanvas.height;
 	
+	image = [];
+	
 	for(var i = 0; i < pixelCount; i++)
 	{
 		var pixel = sourceContext.getImageData(get2DXValue(i, sourceCanvas.width), get2DYValue(i, sourceCanvas.width), 1, 1);
