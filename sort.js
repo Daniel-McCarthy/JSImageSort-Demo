@@ -39,6 +39,8 @@ function startSort()
 	clearInterval(sortInterval);
 	sorted = false;
 	
+	loadImage();
+	
 	shuffleCanvas();
 	
 	var algorithm = document.getElementById("algorithmDropDownMenu").value;
