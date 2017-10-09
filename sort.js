@@ -77,6 +77,11 @@ function startSort()
 			sortInterval = setInterval(oddEvenSort, 0);
 			break;
 		}
+		case "Cocktail Sort":
+		{
+			sortInterval = setInterval(cocktailSort, 0);
+			break;
+		}
 	}
 	
 	//Init Gnome Sort
@@ -111,6 +116,13 @@ function startSort()
 	insertionSecondIndex = 0;
 	insertionSwapNeeded = false;
 	insertionFirstRun = true;
+	
+	//Cocktail Sort
+	cocktailIndex = 0;
+	beginning = 0;
+	end = 0;
+	cocktailC = 0;
+	left = true;
 }
 
 function initializeImageArray()
@@ -428,6 +440,70 @@ function insertionSort()
 			insertionSecondIndex = insertionIndex;
 		}
 			
+		updateDisplayCanvas();
+	}
+		
+	if(sorted)
+	{
+		clearInterval(sortInterval);
+	}
+}
+
+var cocktailIndex = 0;
+var beginning = 0;
+var end = 0;
+var cocktailC = 0;
+var left = true;
+
+function cocktailSort()
+{
+	if(!paused)
+	{	
+	
+		sorted = isSorted();
+	
+		if(beginning == 0 && end == 0)
+		{
+			end = image.length - 1;
+		}
+		
+		if(left)
+		{
+			if((beginning + cocktailIndex) < end)
+			{
+				if(image[beginning + cocktailIndex].index > (image[beginning + cocktailIndex + 1].index))
+				{
+					swapImageData(beginning + cocktailIndex, beginning + cocktailIndex + 1);
+				}
+				
+				cocktailIndex++;
+			}
+			else
+			{
+				left = false;
+				end--;
+				cocktailIndex = 0;
+			}
+		}
+		else
+		{
+			if((end + cocktailIndex) > beginning)
+			{
+				if(image[end + cocktailIndex].index < image[end + cocktailIndex - 1].index)
+				{
+					swapImageData(end + cocktailIndex, end + cocktailIndex - 1);
+				}
+
+				cocktailIndex--;
+			}
+			else
+			{
+				left = true;
+				beginning++;
+				cocktailIndex = 0;
+			}
+		}
+				
 		updateDisplayCanvas();
 	}
 		
