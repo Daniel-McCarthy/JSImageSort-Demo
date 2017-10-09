@@ -2,8 +2,12 @@ var image = [];
 var sorted = false;
 var sortInterval;
 var paused = false;
+var isPhotoSelected = true;
+
 var photoImage = new Image();
+var rainbowImage = new Image();
 photoImage.src = "chicken32.png";
+rainbowImage.src = "rainbow32.png";
 
 var sourceCanvas = document.createElement("canvas");
 var sourceContext = sourceCanvas.getContext("2d");
@@ -16,7 +20,14 @@ function loadImage()
 {
 	document.getElementById("imageCanvas").getContext("2d").imageSmoothingEnabled = false;
 
+
+	if(isPhotoSelected)
+	{
 		sourceContext.drawImage(photoImage, 0, 0);
+	}
+	else
+	{
+		sourceContext.drawImage(rainbowImage, 0, 0);
 	}
 	
 	initializeImageArray();
