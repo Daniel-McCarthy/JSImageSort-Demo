@@ -2,6 +2,8 @@ var image = [];
 var sorted = false;
 var sortInterval;
 var paused = false;
+var photoImage = new Image();
+photoImage.src = "chicken32.png";
 
 var sourceCanvas = document.createElement("canvas");
 var sourceContext = sourceCanvas.getContext("2d");
@@ -14,14 +16,10 @@ function loadImage()
 {
 	document.getElementById("imageCanvas").getContext("2d").imageSmoothingEnabled = false;
 
-	var imageData = new Image();
-	
-	imageData.onload = function () {
-		sourceContext.drawImage(imageData, 0, 0);
-		initializeImageArray();
+		sourceContext.drawImage(photoImage, 0, 0);
 	}
 	
-	imageData.src = "chicken32.png";
+	initializeImageArray();
 }
 
 
