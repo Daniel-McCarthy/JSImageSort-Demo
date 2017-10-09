@@ -472,3 +472,8 @@ function pauseButton()
 		document.getElementById("pauseButton").value = "Resume";
 	}
 }
+
+function swapImage()
+{
+	isPhotoSelected = !isPhotoSelected;
+}
